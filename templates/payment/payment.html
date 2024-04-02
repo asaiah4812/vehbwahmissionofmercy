@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Home Page {% endblock %}
+
+{% block content %}
+    <section class="payment"></section>
+ <form id="paymentForm">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email-address" required />
+        </div>
+        <div class="form-group">
+          <label for="amount">Amount</label>
+          <input type="tel" id="amount" required />
+        </div>
+        <div class="form-group">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" />
+        </div>
+        <div class="form-group">
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" />
+        </div>
+        <div class="form-submit">
+          <button type="submit" onclick="payWithPaystack()"> Pay </button>
+        </div>
+      </form>
+      
+  </body>  
+      <script src="https://js.paystack.co/v1/inline.js"></script> 
+      <script src="{% static 'js/payment.js' %}"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    </script>
+{% endblock %}

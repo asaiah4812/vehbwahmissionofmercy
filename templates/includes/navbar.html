@@ -11,7 +11,7 @@
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'contact' %}">Contact</a></li>
           <li><a href="{% url 'services' %}">Services</a></li>
-          <li><a href="/payment.html" class="btn2">Donate</a></li>
+          <li><a href="{% url 'payment' %}" class="btn2">Donate</a></li>
         </ul>
         <li onclick="openSideBar()"><i class="fa-solid fa-bars"></i></li>
       </div>
@@ -23,6 +23,6 @@
         <li><a href="{% url 'about' %}">About</a></li>
         <li><a href="{% url 'contact' %}">Contact</a></li>
         <li><a href="{% url 'services' %}">Services</a></li>
-        <li><a href="/payment.html">Donate</a></li>
+        <li><a href="{% url 'payment' %}">Donate</a></li>
       </ul>
     </nav>

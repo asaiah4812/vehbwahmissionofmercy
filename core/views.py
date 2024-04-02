@@ -62,3 +62,6 @@ def sendEmail(request):
         email.fail_silently=False
         email.send()
     return render(request, 'email/email_templates.html') 
+
+def payment(request):
+    return render(request, 'payment/payment.html')
