@@ -1,0 +1,187 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} About Page {% endblock %}
+
+{% block content %}
+
+    <section class="bgabout">
+      <h1>About Us</h1>
+    </section>
+
+    <section class="about">
+      <div class="about-right">
+        {% for about in abouts %}
+        <div class="right-button" x-data="{ showModal : false }">
+          <button title="modal" @click="showModal = !showModal">
+            <h2>{{about.title}}</h2>
+            <i class="bx bx-chevron-down" x-show="!showModal"></i>
+            <i class="bx bx-chevron-up" x-show="showModal"></i>
+          </button>
+          <p x-show="showModal">
+            {{about.content}}
+          </p>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="about-right">
+        <img src="{% static '/images/ngo/ngo13.jpg' %}" alt="about image" />
+      </div>
+    </section>
+
+    <section class="mercy">
+      <h1>
+        VEHBWAH MISSION OF MERCY FOUNDATION (VMMF) <br />
+        OUR THEMATIC AREAS
+      </h1>
+      <ol>
+        <li>
+          <a class="header" href="">Provide Healthcare Services.</a>
+          <ul class="list">
+            <li>
+              <a href="#"
+                >Provision of Healthcare Intervention in the lives of
+                less-privilege children, Widows, orphans, IDPs etc</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                >Provision of Healthcare Intervention on cases were such
+                patience cannot afford,</a
+              >
+            </li>
+            <li>
+              <a href="#">Special health cases of people with disabilities</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a class="header" href="">Provide Educational Services.</a>
+          <ul class="list">
+            <li>
+              <a href="#"
+                >Give Training to all categories of Workers on preparing for
+                retirement, enterpreneueurship, Fit for the elderly etc.,</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                >Good governances training for civil servant, private
+                organisations (NGOs, CBOs, etc,)</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                >Intervene in the lives of less-privilege children Education,
+                Health, Entrepreneur training and others.</a
+              >
+            </li>
+            <li>
+              <a href="#">Provision of Scholarships, Educational grants etc.</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a class="header" href="">Intervene in Agricultural Services</a>
+          <ul class="list">
+            <li>
+              <a href="#"
+                >Train all categories of Farmers on new farming techniques,
+                preservation, packaging and marketing.</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                >Guide farmers to form cooperatives Organization that will
+                enable them to recieve grants and other assitant from local and
+                inernational bodies.</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                >Intervene in the lives of less-privilege children Education,
+                Health, Entrepreneur training and others.</a
+              >
+            </li>
+            <li>
+              <a href="#">Provision of Scholarships, Educational grants etc.</a>
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <section class="about-us">
+      <div class="divider">
+        <div class="about-us__frame">
+          <div class="frame">
+            <div class="framer__inner end">
+              <img src="{% static '/images/who/work1.jpg' %}" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="about-us__inner">
+          <span
+            >1
+            <div></div>
+          </span>
+          <h2>WHO ARE WE</h2>
+          <p>
+            fundsforNGOs is a social enterprise offering knowledge and skills to
+            NGOs, companies and individuals worldwide to improve their resource
+            mobilization processes and enable a sustainable environment.
+          </p>
+        </div>
+      </div>
+      <div class="divider">
+        <div class="about-us__inner">
+          <span
+            >2
+            <div></div>
+          </span>
+          <h2>WHAT WE DO</h2>
+          <p>
+            We research, develop and curate content that is useful for the
+            sustainability and growth of NGOs, companies and individuals working
+            in sustainable development and poverty alleviation around the world.
+            ource mobilization processes and enable a sustainable environment.
+          </p>
+        </div>
+        <div class="about-us__frame">
+          <div class="frame">
+            <div class="framer__inner ind">
+              <img src="{% static '/images/who/work.jpg' %}" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="divider">
+        <div class="about-us__frame">
+          <div class="frame">
+            <div class="framer__inner end">
+              <img src="{% static '/images/who/children.jpg' %}" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="about-us__inner">
+          <span
+            >3
+            <div></div>
+          </span>
+          <h2>WHY WE DO IT</h2>
+          <p>
+            The world is full of opportunities but very few are able to
+            channelize them. Knowledge, skills and information continues to
+            remain out of reach for many. fundsforNGOs seeks to bridge this gap
+            by introducing to the vast number of resources the world has and how
+            it can help them gain sustainable development.
+          </p>
+        </div>
+      </div>
+    </section>
+
+   {% include 'includes/gallery.html' %}
+
+{% endblock %}

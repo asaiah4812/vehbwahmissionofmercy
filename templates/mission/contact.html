@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Contact Page {% endblock %}
+
+
+{% block content %}
+
+<section class="contact">
+      <h1>Contact Us</h1>
+    </section>
+
+    <section class="contact__divider">
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3941.2491030908463!2d11.364984875857248!3d8.949178590231648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sng!4v1711658182221!5m2!1sen!2sng"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <div class="touch">
+        <h4>CONTACT US</h4>
+        <h2>Get in touch with us:</h2>
+        <p>
+          The Network is charged with the objective of identifying, registering,
+          coordinating, building capacity and mobilizing civil society
+          organizations to promote interconnectivity and bring equity, justice,
+          peace and development to grassroots communities throughout Nigeria,
+          including the implementation of NEEDS, SEEDS, LEEDS and the MDGs.
+        </p>
+        <div class="touch__inner">
+          <div class="inner__desc">
+            <div class="icn">
+                <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="desc">
+              <h3>Visit Us</h3>
+              <p>
+                Behind Bridge Nursery Primary School, Jalingo, Taraba, Nigeria.
+                <br />
+                Plot 3 Sobanjo avenue, Idi-ishin Jericho Ibadan, Oyo, Nigeria
+              </p>
+            </div>
+          </div>
+          <div class="inner__desc">
+            <div class="icn">
+                <a href="mailto: 'henchon1@gmail.com' "><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <div class="desc">
+              <h3>Mail Us</h3>
+              <p>
+                Behind Bridge Nursery Primary School, Jalingo, Taraba, Nigeria.
+                <br />
+                Plot 3 Sobanjo avenue, Idi-ishin Jericho Ibadan, Oyo, Nigeria
+              </p>
+            </div>
+          </div>
+          <div class="inner__desc">
+            <div class="icn">
+                <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="desc">
+              <h3>Call Us</h3>
+              <p>
+                +234 (0)7033413075 / +234(0)8033159999<br />
+                info@nigeriannetworkforcommunitydevelopment.org
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   {% include 'includes/contact_form.html' %}
+
+    {% endblock %}

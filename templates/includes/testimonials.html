@@ -1,0 +1,19 @@
+{% load static %}
+
+ <div class="testi_section">
+            <div class="testi_container">
+        {% for comment in comments %}
+                <div class="testi_card">
+                    <img src="{% static 'images/quotation.png' %}" class="quote">
+                    <p>"{{comment.body}}"</p>
+                    <div class="test_person">
+                        <img src="{{ comment.avatar.url }}" width="50px">
+                        <div class="name_desig">
+                            <h4>{{comment.user}}</h4>
+                            <p>{{comment.occupation}}</p>
+                        </div>
+                    </div>
+                </div>
+        {% endfor %}
+            </div>
+        </div>

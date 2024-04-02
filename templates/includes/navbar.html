@@ -1,0 +1,28 @@
+{% load static %}
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="{% url 'home' %}">
+          <img src="{% static '/images/logod.svg' %}" alt="" />
+        </a>
+      </div>
+      <div class="nav-right">
+        <ul id="navbar">
+          <li class="active"><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="/payment.html" class="btn2">Donate</a></li>
+        </ul>
+        <li onclick="openSideBar()"><i class="fa-solid fa-bars"></i></li>
+      </div>
+      <ul class="sidebar">
+        <li onclick="closeSideBar()">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </li>
+        <li class="active"><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+        <li><a href="{% url 'services' %}">Services</a></li>
+        <li><a href="/payment.html">Donate</a></li>
+      </ul>
+    </nav>

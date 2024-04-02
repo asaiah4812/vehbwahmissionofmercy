@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Home Page {% endblock %}
+
+{% block content %}
+
+ <section class="hero">
+      <div class="hero__desc">
+        <img src="{% static 'images/logo2.svg' %}" alt="logo" />
+        <h2>VEHBWAH MISSION OF MERCY FOUNDATION</h2>
+        <i>....Building Lives.....Shapping Destinies</i>
+        <p>
+          Inspiring hope, transforming lives. Join us in building a world where
+          <br />
+          every individual has the opportunity to thrive.
+        </p>
+        <a href="#" class="btn">Join Us</a>
+        <a href="#children" class="arrow"><i>👇</i></a>
+      </div>
+    </section>
+    <section class="hero2">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <h2>Utilize our Solution to expand Your business.</h2>
+          <p>
+            Together, we build a tomorrow filled with hope, opportunity, and
+            equality. Join our community dedicated to making a positive impact
+            on the world. At the heart of our mission is the belief that every
+            life counts.
+          </p>
+          <a href="" class="btn2">Let's Talk</a>
+        </div>
+        <div class="hero-right">
+          <a href="/payment.html" class="pop"
+            >Donate <i class="fa-solid fa-circle-dollar-to-slot"></i
+          ></a>
+        </div>
+      </div>
+      <div class="social">
+        <a href="https://web.facebook.com/groups/835834717009856" target="_blank">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="https://www.instagram.com/vehbwah_mission_foundation/?hl=en">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://twitter.com/titus_henson">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <a href="">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </div>
+    </section>
+    <section class="hero3" id="children">
+      <div class="top">
+        <div class="topLeft">
+          <h2>
+            We provide The Best <br />
+            Solution For the <br />
+            Future
+            <img class="imgCard" src="{% static 'images/img (6).jpg' %}" alt="image" />
+          </h2>
+        </div>
+        <div class="topRight">
+          <p>
+            Begin by visiting the YouTube video you wish to download. This step
+            ensures a streamlined and hassle-free downloading experience.
+          </p>
+        </div>
+      </div>
+      <div class="bottom">
+        {% include 'includes/slider.html' %}
+        <div class="text-right">
+          <p>
+            <span>&#10077;</span>We believe that every child deserves access to
+            quality education. Through our educational programs, we provide
+            scholarships, tutoring, and school supplies to ensure that children
+            have the tools they need to succeed in school and beyond. We work to
+            ensure that children have access to essential healthcare services.
+            From providing vaccinations to organizing medical camps, we are
+            committed to keeping children healthy and happy.
+            <span>&#10078;</span>
+          </p>
+        </div>
+      </div>
+      <div></div>
+    </section>
+    <section class="hero4">
+      <div class="hero4-left">
+        <img src="{% static 'images/men.png' %}" alt="mendem" />
+      </div>
+      <div class="hero4-right">
+        <h1>Skill Development</h1>
+        <p>
+          We believe in equipping children with the skills they need to succeed
+          in life. Through our skill development programs, we offer training in
+          areas such as computer literacy, vocational skills, and
+          entrepreneurship, empowering children to build a better future for
+          themselves. Our comprehensive skill development programs are meticulously 
+          designed to foster holistic growth and self-reliance among children from diverse 
+          backgrounds. Through these initiatives, we aim to cultivate a generation of
+           confident and capable individuals who can thrive in any endeavor they pursue.
+        </p>
+      </div>
+    </section>
+    {% include 'includes/gallery.html' %}
+     <!-- --- Testimonials Section --- -->
+       {% include 'includes/testimonials.html' %}
+
+        {% include 'includes/contact_form.html' %}
+
+{% endblock %}

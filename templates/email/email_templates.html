@@ -1,0 +1,42 @@
+<style>
+    .email_sent{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+    .btn{
+        padding: 1rem;
+        border: none;
+        background: #053a5e;
+         color: #fff;
+    }
+
+    .cont{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-decoration: none;
+        gap: 0.5rem;
+        background: rgba(109, 215, 241, 0.6);
+        padding: 30px;
+        border-radius: 8px;
+        width: 40%;
+        
+    }
+    @media(max-width:600px){
+        .cont{
+         width: 80%;
+    }}
+</style>
+<section class="email_sent">
+    <div class="cont">
+        <h1>Thanks for reaching out!</h1>
+        <p>Your message was Successfull sent. we will get Back to you shortly</p>
+        <a href="{% url 'home' %}" class="btn">Go to Home Page</a>
+    </div>
+    
+</section>

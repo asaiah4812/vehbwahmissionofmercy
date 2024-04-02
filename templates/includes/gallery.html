@@ -1,0 +1,13 @@
+{% load static %}
+
+<section class="gallery">
+      <h1>Our Gallery</h1>
+      <div class="gallery-inner baguetteBoxOne">
+        {% for gallery in galleries %}
+        <a href="{{ gallery.image.url }}" class="gallery-img" title="">
+          <img src="{{ gallery.image.url }}" alt="{{ gallery.name }}">
+        </a>
+        
+        {% endfor %}
+      </div>
+    </section>

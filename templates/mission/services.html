@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Home Page {% endblock %}
+
+
+{% block content %}
+
+<style>
+  .custom__inner{
+    text-decoration: none;
+    color: #000;
+  }
+</style>
+
+ <section class="services">
+      <div class="services__inner">
+        <h3>Services</h3>
+        <h2>
+          We're a full service agency with a proven process <br />
+          to help you get results
+        </h2>
+        <p>
+          We get it - working with another business can be risky, which is why
+          we’re committed to building a long lasting relationship with our
+          clients. At Morweb, we’ve been earning our client’s trust and
+          delivering results since 2004. Our proven process has been tailored
+          specifically for nonprofits’ unique goals and audiences.
+        </p>
+      </div>
+    </section>
+
+    <section class="custom">
+      <div class="custom__grid">
+        {% for service in services %}
+        <a class="custom__inner" href="{{ service.get_absolute_url }}" >
+          <img src="{{ service.icon.url }}" alt="" />
+          <h2>
+            {{service.title}}
+          </h2>
+          <p>
+            {{service.content|truncatechars:120}}
+          </p>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+
+    {% include 'includes/testimonials.html' %}
+
+{% endblock %}
