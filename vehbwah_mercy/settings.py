@@ -34,7 +34,7 @@ if ENVIRONMENT == 'development':
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [".vercel.app", ".now.sh", "127.0.0.1", "localhost"]
 
 INTERNAL_IPS = [
     '127.0.0.1',
@@ -95,13 +95,14 @@ WSGI_APPLICATION = 'vehbwah_mercy.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env('NAME'),
+        'USER': env('USER'),
+        'PASSWORD': env('PASSWORD'),
+        'HOST': env('HOST'),
+        'PORT': env('PORT'),
     }
 }
-POSTGRES_LOCALLY = True
-if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:
-     DATABASES['default'] = dj_database_url.parse(env('DATABASE_URL'))
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -142,10 +143,8 @@ MEDIA_URL = 'media/'
 STATICFILE_DIRS = BASE_DIR/'static'
 STATIC_ROOT = BASE_DIR/'staticfiles'
 
-if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:
-    DEFAULT_fILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
-else:
-    MEDIA_ROOT = BASE_DIR/'staticfiles/media'
+DEFAULT_fILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+
 
 STORAGES = {
     "default": {
