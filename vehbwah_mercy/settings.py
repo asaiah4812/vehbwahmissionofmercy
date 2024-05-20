@@ -16,23 +16,19 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-from environ import Env
-env = Env()
-Env.read_env( ) 
-ENVIRONMENT = env('ENVIRONMENT', default='production')
+# from environ import Env
+# env = Env()
+# Env.read_env( ) 
+# ENVIRONMENT = env('ENVIRONMENT', default='production')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = 'django-insecure-b^vmpx=atsu5_wo07c+jzc@ud#86t(2%16g6m7srl6=7k-dqom'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-
-if ENVIRONMENT == 'development':
-    DEBUG = True 
-else:
-    DEBUG = False
+DEBUG = False
 
 ALLOWED_HOSTS = [".vercel.app", ".now.sh", "127.0.0.1", "localhost"]
 
@@ -96,11 +92,11 @@ WSGI_APPLICATION = 'vehbwah_mercy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('NAME'),
-        'USER': env('USER'),
-        'PASSWORD': env('PASSWORD'),
-        'HOST': env('HOST'),
-        'PORT': env('PORT'),
+        'NAME': 'postgres',
+        'USER': 'postgres.aamtalzuaysvgdqktvbw',
+        'PASSWORD': '5n3ldvr6jCUay3ym',
+        'HOST': 'aws-0-eu-central-1.pooler.supabase.com',
+        'PORT': '5432',
     }
 }
 
@@ -156,9 +152,9 @@ STORAGES = {
 }
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': env('CLOUD_NAME'),
-    'API_KEY': env('CLOUD_API_KEY'),
-    'API_SECRET': env('CLOUD_API_SECRET')
+    'CLOUD_NAME': 'dvii4ij1z',
+    'API_KEY': '653196732325355',
+    'API_SECRET': 'SsUO2l4CEBb68LfH3fBDJnSKp7c'
 }
 
 # Default primary key field type
@@ -170,7 +166,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = 'vehbwah62@gmail.com'
+EMAIL_HOST_PASSWORD = 'attafvmvoqzqyuzd'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
