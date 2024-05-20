@@ -4,7 +4,7 @@
       <h1>Our Gallery</h1>
       <div class="gallery-inner baguetteBoxOne">
         {% for gallery in galleries %}
-        <a href="{{ gallery.image.url }}" class="gallery-img" title="">
+        <a href="{{ gallery.image.url }}" class="gallery-img">
           <img src="{{ gallery.image.url }}" alt="{{ gallery.name }}">
         </a>
         

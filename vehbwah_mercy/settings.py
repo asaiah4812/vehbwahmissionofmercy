@@ -54,6 +54,8 @@ INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",  # new
     'core.apps.CoreConfig',
     'django_summernote',
+    'cloudinary_storage',
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
@@ -97,7 +99,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-POSTGRES_LOCALLY = False
+POSTGRES_LOCALLY = True
 if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:
      DATABASES['default'] = dj_database_url.parse(env('DATABASE_URL'))
 
@@ -139,7 +141,11 @@ STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
 STATICFILE_DIRS = BASE_DIR/'static'
 STATIC_ROOT = BASE_DIR/'staticfiles'
-MEDIA_ROOT = BASE_DIR/'staticfiles/media'
+
+if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:
+    DEFAULT_fILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+else:
+    MEDIA_ROOT = BASE_DIR/'staticfiles/media'
 
 STORAGES = {
     "default": {
@@ -148,6 +154,12 @@ STORAGES = {
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",  # new
     },
+}
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': env('CLOUD_NAME'),
+    'API_KEY': env('CLOUD_API_KEY'),
+    'API_SECRET': env('CLOUD_API_SECRET')
 }
 
 # Default primary key field type
