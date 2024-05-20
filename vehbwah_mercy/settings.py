@@ -34,7 +34,7 @@ if ENVIRONMENT == 'development':
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app", ".now.sh"]
+ALLOWED_HOSTS = ["*"]
 
 INTERNAL_IPS = [
     '127.0.0.1',
