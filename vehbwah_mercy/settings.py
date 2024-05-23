@@ -142,14 +142,7 @@ STATIC_ROOT = BASE_DIR/'staticfiles'
 DEFAULT_fILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 
-STORAGES = {
-    "default": {
-        "BACKEND": "django.core.files.storage.FileSystemStorage",
-    },
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",  # new
-    },
-}
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'dvii4ij1z',
